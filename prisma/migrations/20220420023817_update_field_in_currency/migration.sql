@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "currency" ALTER COLUMN "key" SET DATA TYPE VARCHAR(20);

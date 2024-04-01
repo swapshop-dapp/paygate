@@ -1,0 +1,131 @@
+{
+  "name": "@goswapshop/paygate-service",
+  "version": "0.0.1",
+  "description": "Payment gateway for GoSwapShop",
+  "author": {
+    "email": "phamanhtan@proton.me",
+    "name": "Pham Anh Tan",
+    "url": "https://github.com/ngankilo"
+  },
+  "private": true,
+  "license": "UNLICENSED",
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "nest build",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "start": "nest start",
+    "start:dev": "nest start --watch",
+    "start:debug": "nest start --debug --watch",
+    "start:prod": "node dist/src/main",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:cov": "jest --coverage --maxWorkers=1 --passWithNoTests",
+    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
+    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "db": "node node_modules/.bin/prisma"
+  },
+  "dependencies": {
+    "@nestjs/axios": "^0.0.6",
+    "@nestjs/common": "^8.4.7",
+    "@nestjs/config": "^1.2.1",
+    "@nestjs/core": "^8.4.7",
+    "@nestjs/event-emitter": "^1.4.2",
+    "@nestjs/mapped-types": "^2.0.5",
+    "@nestjs/passport": "^8.2.2",
+    "@nestjs/platform-express": "^8.4.7",
+    "@nestjs/schedule": "^1.1.0",
+    "@nestjs/swagger": "^5.2.1",
+    "@nestjs/terminus": "^8.1.1",
+    "@nestjs/throttler": "^2.0.1",
+    "@prisma/client": "^4.16.2",
+    "aws-sdk": "^2.1589.0",
+    "axios": "^0.26.1",
+    "big.js": "^6.2.1",
+    "body-parser": "^1.20.2",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.13.2",
+    "compression": "^1.7.4",
+    "dayjs": "^1.11.10",
+    "ethers": "^5.7.2",
+    "helmet": "^5.1.1",
+    "kafkajs": "^1.16.0",
+    "luxon": "^2.5.2",
+    "passport": "^0.5.3",
+    "passport-headerapikey": "^1.2.2",
+    "passport-jwt": "^4.0.1",
+    "qs": "^6.12.0",
+    "reflect-metadata": "^0.1.14",
+    "rimraf": "^3.0.2",
+    "rxjs": "^7.8.1",
+    "snakecase-keys": "^5.5.0",
+    "stripe": "^11.18.0",
+    "swagger-ui-express": "^4.6.3"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^8.2.8",
+    "@nestjs/schematics": "^8.0.11",
+    "@nestjs/testing": "^8.4.7",
+    "@side/jest-runtime": "^1.1.0",
+    "@types/big.js": "^6.2.2",
+    "@types/cron": "^1.7.3",
+    "@types/express": "^4.17.21",
+    "@types/jest": "^28.1.8",
+    "@types/node": "^16.18.93",
+    "@types/qs": "^6.9.14",
+    "@types/supertest": "^2.0.16",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "@typescript-eslint/parser": "^5.62.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^8.10.0",
+    "eslint-import-resolver-typescript": "^2.7.1",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jest": "^26.9.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.8.8",
+    "prisma": "^4.16.2",
+    "source-map-support": "^0.5.21",
+    "supertest": "^6.3.4",
+    "ts-jest": "^28.0.8",
+    "ts-loader": "^9.5.1",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^3.15.0",
+    "typescript": "^4.9.5"
+  },
+  "jest": {
+    "runtime": "@side/jest-runtime",
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": ".",
+    "testRegex": ".*\\.(e2e-)?spec\\.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "collectCoverageFrom": [
+      "src/**/*.(t|j)s",
+      "!src/main.(t|j)s"
+    ],
+    "coverageDirectory": "./coverage",
+    "testEnvironment": "node",
+    "coverageThreshold": {
+      "global": {
+        "statements": 0,
+        "branches": 0,
+        "lines": 0
+      }
+    },
+    "coveragePathIgnorePatterns": [
+      "src/common/",
+      "dist/",
+      "node_modules/"
+    ],
+    "testPathIgnorePatterns": [
+      "src/common/",
+      "dist/",
+      "node_modules/"
+    ]
+  }
+}
